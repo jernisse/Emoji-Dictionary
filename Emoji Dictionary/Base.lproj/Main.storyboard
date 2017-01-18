@@ -62,8 +62,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr3-nF-ueu">
-                                <rect key="frame" x="78" y="114" width="218" height="239"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Smiley" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzM-Uo-2Ak">
+                                <rect key="frame" x="122.5" y="444" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BirthYear: 2010" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1q-V7-0Zg">
+                                <rect key="frame" x="129" y="485" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="💒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr3-nF-ueu">
+                                <rect key="frame" x="78" y="116" width="218" height="239"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -73,11 +85,17 @@
                         <constraints>
                             <constraint firstItem="hM7-TO-e4D" firstAttribute="centerX" secondItem="KHi-IQ-JoE" secondAttribute="centerX" id="CeG-bh-7gP"/>
                             <constraint firstItem="Hr3-nF-ueu" firstAttribute="centerX" secondItem="KHi-IQ-JoE" secondAttribute="centerX" id="drk-7Y-cxq"/>
+                            <constraint firstItem="UzM-Uo-2Ak" firstAttribute="top" secondItem="hM7-TO-e4D" secondAttribute="bottom" constant="20" id="dvR-3a-sdi"/>
+                            <constraint firstItem="i1q-V7-0Zg" firstAttribute="centerX" secondItem="KHi-IQ-JoE" secondAttribute="centerX" id="fN8-1F-sja"/>
+                            <constraint firstItem="UzM-Uo-2Ak" firstAttribute="centerX" secondItem="KHi-IQ-JoE" secondAttribute="centerX" id="ixU-p1-rFF"/>
                             <constraint firstItem="hM7-TO-e4D" firstAttribute="top" secondItem="Hr3-nF-ueu" secondAttribute="bottom" constant="50" id="oex-82-BJo"/>
+                            <constraint firstItem="i1q-V7-0Zg" firstAttribute="top" secondItem="UzM-Uo-2Ak" secondAttribute="bottom" constant="20" id="prc-q0-bzQ"/>
                             <constraint firstItem="Hr3-nF-ueu" firstAttribute="top" secondItem="17g-ov-xzE" secondAttribute="bottom" constant="50" id="rWP-E0-ci6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="birthYearLabel" destination="i1q-V7-0Zg" id="7sR-ph-YyJ"/>
+                        <outlet property="categoryLabel" destination="UzM-Uo-2Ak" id="fs1-ly-MMH"/>
                         <outlet property="definitionLabel" destination="hM7-TO-e4D" id="lrk-SG-Eg1"/>
                         <outlet property="emojiLabel" destination="Hr3-nF-ueu" id="eym-UM-HZu"/>
                     </connections>

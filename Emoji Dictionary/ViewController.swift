@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
 
     @IBOutlet weak var sweettable: UITableView!
     
-    var emojis = ["😀","😬","🤡","🤠","👹","💩","👨🏻‍✈️"]
+    var emojis : [Emoji] = []
     
     
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         
         sweettable.dataSource = self
         sweettable.delegate = self
-        
+        emojis = makeEmojiArray()
     }
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +31,8 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
+        cell.textLabel?.text = emoji.stringEmoji
         return cell
         
     }
@@ -46,7 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let defVC = segue.destination as!
             DefinitionViewController
-        defVC.emoji = sender as! String
+        defVC.emoji = sender as! Emoji
     
     }
     
@@ -55,6 +56,51 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         // Dispose of any resources that can be recreated.
     }
 
+    func makeEmojiArray() -> [Emoji] {
+        let emoji1 = Emoji()
+        emoji1.stringEmoji = "😀"
+        emoji1.birthYear = 2016
+        emoji1.category = "Smiley"
+        emoji1.definition = "A Smiley Face"
+        
+        let emoji2 = Emoji()
+        emoji2.stringEmoji = "😬"
+        emoji2.birthYear = 2011
+        emoji2.category = "Smiley"
+        emoji2.definition = "A Grinning Face"
+        
+        let emoji3 = Emoji()
+        emoji3.stringEmoji = "🤡"
+        emoji3.birthYear = 2008
+        emoji3.category = "Person"
+        emoji3.definition = "A Scary Clown"
+        
+        let emoji4 = Emoji()
+        emoji4.stringEmoji = "🤠"
+        emoji4.birthYear = 2001
+        emoji4.category = "Smiley"
+        emoji4.definition = "A Cowboy"
+        
+        let emoji5 = Emoji()
+        emoji5.stringEmoji = "👹"
+        emoji5.birthYear = 2006
+        emoji5.category = "Animal"
+        emoji5.definition = "A Devil Lion"
+        
+        let emoji6 = Emoji()
+        emoji6.stringEmoji = "💩"
+        emoji6.birthYear = 2008
+        emoji6.category = "Smiley"
+        emoji6.definition = "Poo Face"
+        
+        let emoji7 = Emoji()
+        emoji7.stringEmoji = "👨🏻‍✈️"
+        emoji7.birthYear = 1947
+        emoji7.category = "Person"
+        emoji7.definition = "A Conductor"
+
+        return [emoji1, emoji2, emoji3, emoji4, emoji5,emoji6, emoji7]
+    }
 
 }
 
